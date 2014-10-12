@@ -1,13 +1,13 @@
-Dashboard
-=========
+Dashboard - Light Weight Component GUI
+======================================
 
-This project is a test module for exploring Vaadin Framework features by sample examples.
+This project is a framework test module for exploring Vaadin Framework features by sample examples.
 
 References
 
 Github,
 Vaadin Books,
-Vaadin Supported Websites and other internet resources.
+Vaadin Supported Websites and other internet sources.
 
 Thanks
 
