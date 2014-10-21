@@ -1,4 +1,4 @@
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 import java.text.DateFormatSymbols;
 import java.util.Date;
@@ -18,7 +18,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.shared.ui.combobox.FilteringMode;
 import com.vaadin.shared.ui.datefield.Resolution;
-import com.vaadin.tests.components.calendar.CalendarTestEvent;
+import com.cavisson.gui.dashboard.components.calender.CalendarTestEvent;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;

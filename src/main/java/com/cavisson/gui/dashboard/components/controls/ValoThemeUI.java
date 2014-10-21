@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -68,7 +68,7 @@ public class ValoThemeUI extends UI {
 
     private boolean testMode = false;
 
-    @WebServlet(value = "/*", asyncSupported = true)
+    /*@WebServlet(value = "/*", asyncSupported = true)
     @VaadinServletConfiguration(productionMode = true, ui = ValoThemeUI.class)
     public static class Servlet extends VaadinServlet {
 
@@ -78,7 +78,7 @@ public class ValoThemeUI extends UI {
             getService().addSessionInitListener(
                     new ValoThemeSessionInitListener());
         }
-    }
+    }*/
 
     private static LinkedHashMap<String, String> themeVariants = new LinkedHashMap<String, String>();
     static {

@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 import com.vaadin.ui.Component;
 import com.vaadin.ui.ComponentContainer;

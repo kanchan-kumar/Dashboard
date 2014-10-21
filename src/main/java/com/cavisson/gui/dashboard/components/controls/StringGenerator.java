@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 public class StringGenerator {
     static String[] strings = new String[] { "lorem", "ipsum", "dolor", "sit",

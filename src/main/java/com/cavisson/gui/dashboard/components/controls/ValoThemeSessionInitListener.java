@@ -1,4 +1,4 @@
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 import org.jsoup.nodes.Element;
 
