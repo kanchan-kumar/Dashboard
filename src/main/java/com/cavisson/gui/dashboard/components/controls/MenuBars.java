@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.tests.themes.valo;
+package com.cavisson.gui.dashboard.components.controls;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -26,11 +26,25 @@ import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 
-public class MenuBars extends VerticalLayout implements View {
-    public MenuBars() {
-        setMargin(true);
-        setSpacing(true);
-
+public class MenuBars extends VerticalLayout implements View 
+{
+    public MenuBars() 
+    {
+        //setMargin(true);
+        //setSpacing(true);
+        getTopMenuBar();    
+        setSizeFull();
+    }
+    
+    public void getTopMenuBar()
+    {
+        MenuBar menuBar = getMenuBar();
+        menuBar.addStyleName("small");
+        addComponent(menuBar);     
+    }
+    
+    public void init()
+    {     
         Label h1 = new Label("Menu Bars");
         h1.addStyleName("h1");
         addComponent(h1);
@@ -112,8 +126,10 @@ public class MenuBars extends VerticalLayout implements View {
         wrap.addComponent(split);
     }
 
-    static MenuBar getMenuBar() {
-        Command click = new Command() {
+    static MenuBar getMenuBar() 
+    {
+        Command click = new Command() 
+        {
             @Override
             public void menuSelected(MenuItem selectedItem) {
                 Notification.show("Clicked " + selectedItem.getText());
