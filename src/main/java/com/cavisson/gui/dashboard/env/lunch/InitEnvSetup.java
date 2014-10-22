@@ -283,7 +283,7 @@ public class InitEnvSetup extends UI
             v2.setStyleName(Reindeer.SPLITPANEL_SMALL);
             v3.setStyleName(Reindeer.SPLITPANEL_SMALL);
             
-            h1.setStyleName(Reindeer.SPLITPANEL_SMALL);
+            //h1.setStyleName(Reindeer.SPLITPANEL_SMALL);
             h2.setStyleName(Reindeer.SPLITPANEL_SMALL);
             
             h2.setSplitPosition(50);
