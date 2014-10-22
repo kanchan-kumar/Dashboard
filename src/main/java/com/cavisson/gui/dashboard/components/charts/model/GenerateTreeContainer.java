@@ -14,6 +14,12 @@ import com.vaadin.data.util.IndexedContainer;
 import com.vaadin.event.Action;
 import com.vaadin.server.Resource;
 import com.vaadin.ui.Notification;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  *
@@ -27,7 +33,7 @@ public class GenerateTreeContainer
     static final String INDEX_PROPERTY = "index";
     
     @SuppressWarnings("unchecked")
-    public static Container generateTreeContainer(final int size, final boolean hierarchical)
+    public static Container generateTreeContainer(final int size, final boolean hierarchical) throws IOException
     {
         final TestIcon testIcon = new TestIcon(90);
         final IndexedContainer container = hierarchical ? new HierarchicalContainer() : new IndexedContainer();
@@ -38,12 +44,19 @@ public class GenerateTreeContainer
         container.addContainerProperty(INDEX_PROPERTY, Integer.class, null);
         container.addContainerProperty(DESCRIPTION_PROPERTY, String.class, null);
         
-        for (int i = 1; i < size + 1; i++)
-        {
-            final Item item = container.addItem(i);
-            item.getItemProperty(CAPTION_PROPERTY).setValue("");
-            item.getItemProperty(INDEX_PROPERTY).setValue(i);
-            item.getItemProperty(DESCRIPTION_PROPERTY).setValue("");
+        Properties groupNamesProp = new Properties();
+        InputStream inputStream = GenerateTreeContainer.class.getResourceAsStream("/com/cavisson/gui/dashboard/data/properties/GroupNames.properties");
+        groupNamesProp.load(inputStream);
+        
+        Iterator it = groupNamesProp.entrySet().iterator();
+        int count = 0;
+        while (it.hasNext())
+        {  
+            Map.Entry<String, String> pairs = (Map.Entry) it.next();
+            final Item item = container.addItem(count);
+            item.getItemProperty(CAPTION_PROPERTY).setValue(pairs.getValue());
+            item.getItemProperty(INDEX_PROPERTY).setValue(count);
+            item.getItemProperty(DESCRIPTION_PROPERTY).setValue(pairs.getValue());
             item.getItemProperty(ICON_PROPERTY).setValue(testIcon.get());
         }
         
@@ -108,7 +121,7 @@ public class GenerateTreeContainer
         }
     };
 
-    static Action.Handler getActionHandler()
+    public static Action.Handler getActionHandler()
     {
         return actionHandler;
     }
