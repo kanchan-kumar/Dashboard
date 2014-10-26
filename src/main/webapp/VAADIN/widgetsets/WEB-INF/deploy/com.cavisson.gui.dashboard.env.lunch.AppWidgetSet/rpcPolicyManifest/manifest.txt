@@ -1,0 +1,2 @@
+# Module com.cavisson.gui.dashboard.env.lunch.AppWidgetSet
+# RPC service class, partial path of RPC policy file
