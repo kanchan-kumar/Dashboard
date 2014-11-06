@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Layouts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="layoutName" />
+        <xs:element ref="layoutDescription" />
+        <xs:element ref="canvas_width" />
+        <xs:element ref="canvas_height" />
+        <xs:element ref="layoutComponent" maxOccurs="unbounded" />
+        <xs:element ref="interfaceComponent" maxOccurs="unbounded" />
+        <xs:element ref="interfaceSimulationComponent" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+    <xs:element name="layoutName" type="xs:string" />
+    <xs:element name="layoutDescription" type="xs:string" />
+    <xs:element name="canvas_width" type="xs:string" />
+    <xs:element name="canvas_height" type="xs:string" />
+
+    <xs:element name="layoutComponent">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="layoutCompId" />
+          <xs:element ref="layoutCompName" />
+          <xs:element ref="layoutProperties" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+
+      <xs:element name="layoutCompId" type="xs:string" />
+      <xs:element name="layoutCompName" type="xs:string" />
+
+      <xs:element name="layoutProperties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="xAxisLayoutProp" />
+            <xs:element ref="yAxisLayoutProp" />
+            <xs:element ref="widthLayoutProp" />
+            <xs:element ref="heightLayoutProp" />
+            <xs:element ref="bgColorLayoutProp" />
+            <xs:element ref="fgColorLayoutProp" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+        <xs:element name="xAxisLayoutProp" type="xs:string" />
+        <xs:element name="yAxisLayoutProp" type="xs:string" />
+        <xs:element name="widthLayoutProp" type="xs:string" />
+        <xs:element name="heightLayoutProp" type="xs:string" />
+        <xs:element name="bgColorLayoutProp" type="xs:string" />
+        <xs:element name="fgColorLayoutProp" type="xs:string" />
+
+    <xs:element name="interfaceComponent">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="interfaceCompId" />
+          <xs:element ref="interfaceCompName" />
+          <xs:element ref="begCompId" />
+          <xs:element ref="endCompId" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+
+      <xs:element name="interfaceCompId" type="xs:string" />
+      <xs:element name="interfaceCompName" type="xs:string" />
+      <xs:element name="begCompId" type="xs:string" />
+      <xs:element name="endCompId" type="xs:string" />
+
+    <xs:element name="interfaceSimulationComponent">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="interfaceSimulationCompId" />
+          <xs:element ref="serviceName" />
+          <xs:element ref="interfaceId" />
+          <xs:element ref="serviceMode" />
+          <xs:element ref="serviceType" />
+          <xs:element ref="interfaceSimulationProperties" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+
+      <xs:element name="interfaceSimulationCompId" type="xs:string" />
+      <xs:element name="serviceName" type="xs:string" />
+      <xs:element name="interfaceId" type="xs:string" />
+      <xs:element name="serviceMode" type="xs:string" />
+      <xs:element name="serviceType" type="xs:string" />
+
+      <xs:element name="interfaceSimulationProperties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="xAxisInterfaceSimulationProp" />
+            <xs:element ref="yAxisInterfaceSimulationProp" />
+            <xs:element ref="widthInterfaceSimulationProp" />
+            <xs:element ref="heightInterfaceSimulationProp" />
+            <xs:element ref="bgColorInterfaceSimulationProp" />
+            <xs:element ref="fgColorInterfaceSimulationProp" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+        <xs:element name="xAxisInterfaceSimulationProp" type="xs:string" />
+        <xs:element name="yAxisInterfaceSimulationProp" type="xs:string" />
+        <xs:element name="widthInterfaceSimulationProp" type="xs:string" />
+        <xs:element name="heightInterfaceSimulationProp" type="xs:string" />
+        <xs:element name="bgColorInterfaceSimulationProp" type="xs:string" />
+        <xs:element name="fgColorInterfaceSimulationProp" type="xs:string" />
+
+</xs:schema>

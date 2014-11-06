@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="UserTrace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="StartSession" />
+        <xs:element ref="Pages" />
+        <xs:element ref="EndSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="StartSession">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="StartSessionTime" />
+          <xs:element ref="SessionID" />
+          <xs:element ref="ScriptName" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="StartSessionTime" type="xs:string" />
+    <xs:element name="SessionID" type="xs:string" />
+    <xs:element name="ScriptName" type="xs:string" />
+    
+    <xs:element name="Pages">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="Page" maxOccurs="unbounded" />
+        </xs:sequence>        
+      </xs:complexType>
+    </xs:element>
+    
+      <xs:element name="Page">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="PageName" />
+            <xs:element ref="StartTime" />
+            <xs:element ref="Protocol" />
+            <xs:element ref="ResponseTime" />
+            <xs:element ref="HTTPStatusCode" />
+            <xs:element ref="PageStatus" />
+            <xs:element ref="PageThinkTime" />
+            <xs:element ref="RequestURL" />
+            <xs:element ref="SearchParameters" />
+            <xs:element ref="Parameterization" />
+            <xs:element ref="Validations" />
+            <xs:element ref="Request" />
+            <xs:element ref="Response" />
+            <xs:element ref="ResponseBody" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="HTTPStatusCode" type="xs:string"/>
+      
+      <xs:element name="PageName" type="xs:string"/>
+      
+      <xs:element name="PageStatus" type="xs:string"/>
+       
+      <xs:element name="PageThinkTime" type="xs:string"/>
+      
+      <xs:element name="Protocol" type="xs:string"/>
+      
+      <xs:element name="Request" type="xs:string"/>
+      
+      <xs:element name="Response" type="xs:string"/>
+      
+      <xs:element name="ResponseBody" type="xs:string"/>
+      
+      <xs:element name="ResponseTime" type="xs:string"/>
+      
+      <xs:element name="RequestURL" type="xs:string"/>
+      
+      <xs:element name="StartTime" type="xs:string"/>
+      
+        <xs:element name="SearchParameters">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="SearchParameter" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>  
+         
+          <xs:element name="SearchParameter">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="Name" />
+                <xs:element ref="Value" />
+                <xs:element ref="ORD" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>  
+          
+          <xs:element name="Name" type="xs:string"/>
+          
+          <xs:element name="Value" type="xs:string"/>
+          
+          <xs:element name="ORD" type="xs:string"/>
+          
+        <xs:element name="Parameterization">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="Parameter" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element> 
+        
+          <xs:element name="Parameter">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="ParamterType" />
+                <xs:element ref="Name" />
+               <xs:element ref="Value" />
+             </xs:sequence>
+           </xs:complexType>
+         </xs:element>
+         
+         <xs:element name="ParamterType" type="xs:string"/>
+         
+       <xs:element name="Validations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="Checkpoint" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>  
+           
+          <xs:element name="Checkpoint">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="Detail" /> 
+                <xs:element ref="ID" />
+                <xs:element ref="Status" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>  
+          
+          <xs:element name="Detail" type="xs:string"/>
+          
+          <xs:element name="ID" type="xs:string"/>
+           
+          <xs:element name="Status" type="xs:string"/>  
+          
+    <xs:element name="EndSession">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="SessionTime" />
+          <xs:element ref="SessionStatus" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="SessionTime" type="xs:string"/>
+    
+    <xs:element name="SessionStatus" type="xs:string"/>
+    
+</xs:schema>
