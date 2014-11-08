@@ -22,6 +22,8 @@ import com.vaadin.addon.charts.model.Title;
 import com.vaadin.addon.charts.model.YAxis;
 import com.vaadin.addon.charts.model.style.SolidColor;
 import com.vaadin.ui.Component;
+import pac1.Bean.GraphUniqueKeyDTO;
+import pac1.Bean.TimeBasedTestRunData;
 
 public class LineChart extends AbstractVaadinChartExample {
 
@@ -29,40 +31,30 @@ public class LineChart extends AbstractVaadinChartExample {
     public String getDescription() {
         return "Spline Updating Each Seconds";
     }
-
-    @Override
-    public Component getChart() {
-        final Random random = new Random();
-
+    
+    public Component getChart()
+    {
+      return null;
+    }
+    
+    
+    
+    public Component getChart(Configuration configuration) 
+    {
         final Chart chart = new Chart();
         chart.setSizeFull();
 
-        final Configuration configuration = new Configuration();
-        configuration.getChart().setType(ChartType.SPLINE);
-        configuration.getTitle().setText("Live Time Series Chart");
-
-        Axis xAxis = configuration.getxAxis();
-        xAxis.setType(AxisType.DATETIME);
-        xAxis.setTickPixelInterval(150);
-
-        YAxis yAxis = configuration.getyAxis();
-        yAxis.setTitle(new Title("Value"));
-        yAxis.setPlotLines(new PlotLine(0, 1, new SolidColor("#808080")));
-
-        configuration.getTooltip().setEnabled(false);
-        configuration.getLegend().setEnabled(false);
-
-        final DataSeries series = new DataSeries();
+        /*final DataSeries series = new DataSeries();
         series.setPlotOptions(new PlotOptionsSpline());
         series.setName("Random data");
         for (int i = -19; i <= 0; i++) {
             series.add(new DataSeriesItem(
                     System.currentTimeMillis() + i * 1000, random.nextDouble()));
-        }
+        }*/
               
-        System.out.println("Taken next sample ....");
+        //System.out.println("Taken next sample ....");
         
-        runWhileAttached(chart, new Runnable() {
+        /*runWhileAttached(chart, new Runnable() {
 
             @Override
             public void run() {
@@ -73,10 +65,8 @@ public class LineChart extends AbstractVaadinChartExample {
                 
                 series.add(new DataSeriesItem(x, y), true, true);
             }
-        }, 2000, 1000);
-
-        configuration.setSeries(series);
-
+        }, 2000, 1000);*/
+ 
         chart.drawChart(configuration);
         return chart;
     }

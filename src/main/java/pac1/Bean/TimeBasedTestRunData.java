@@ -17,8 +17,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import pac1.Bean.GraphName.*;
-import pac1.Bean.Percentile.PercentileDataKey;
-import pac1.Bean.Percentile.PercentileInfo;
+
 
 public class TimeBasedTestRunData implements Serializable, Cloneable
 {
@@ -71,19 +70,7 @@ public class TimeBasedTestRunData implements Serializable, Cloneable
   private int testRun_Partition_Type = 0; /* Contain the value of TestRun Partition Type. */
   private DerivedDataProcessor derivedDataProcessor = new DerivedDataProcessor(); /* Used For processing Derived Graph Data. */
   private String activeParitionName = "NA"; /* Variable Contain Active partition Name. */
-
-  private HashMap<PercentileDataKey, PercentileInfo> percentileDataMap = new HashMap<PercentileDataKey, PercentileInfo>();
-
-  public HashMap<PercentileDataKey, PercentileInfo> getPercentileDataMap()
-  {
-    return percentileDataMap;
-  }
-
-  public void setPercentileDataMap(HashMap<PercentileDataKey, PercentileInfo> percentileDataMap)
-  {
-    this.percentileDataMap = percentileDataMap;
-  }
-
+  
   /**
    * Constructor for TimeBased Test Run Data
    * 

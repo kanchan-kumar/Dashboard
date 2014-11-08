@@ -737,7 +737,7 @@ public class ParseDerivedExp
     {
       String fullyEncodedExp = formula;
       String[] stTemp = DerivedData.getTokens(formula);
-      String[][] rptIds = RptInfo.getRptNamesAnls(graphNames);
+      String[][] rptIds = null;//RptInfo.getRptNamesAnls(graphNames);
       for (int j = 0; j < stTemp.length; j++)
       {
         String strToken = stTemp[j].trim();

@@ -175,7 +175,7 @@ public class TestRunData implements java.io.Serializable, Cloneable
   public int enableSynPoint = 0;
 
   // This is for dash board GUI to DDR Integration. Later we can do it at client.
-  public ExecutionDrillDown executionDrillDown = null;
+  //public ExecutionDrillDown executionDrillDown = null;
 
   // This is called from Transaction Summary Window to enable link.
   public String enableDrillDownReportLinkInTransWin = "";
@@ -775,7 +775,7 @@ public class TestRunData implements java.io.Serializable, Cloneable
       arrListTestRunPhasesObj = (ArrayList) testRunPhaseInfo.getPhaseInfo();
       
       //this is use to keep ADF information in memory
-      testRunAdfInfo = (TestRunAdfInfo) ((new ADFBean()).getTestRunADFInfo());
+      //testRunAdfInfo = (TestRunAdfInfo) ((new ADFBean()).getTestRunADFInfo());
 
       //Get net storm port
       netstormPort = Scenario.getNetstormPort(testNum);
@@ -831,7 +831,7 @@ public class TestRunData implements java.io.Serializable, Cloneable
         Log.debugLogAlways(className, "initForNewTestRun", "", "", "WAN_ENV_MODE = " + wanEnv + ", REPORTING_LEVEL = " + reportingLevel);
 
       //Creating instance for ExecutionDrillDown
-      executionDrillDown = new ExecutionDrillDown();
+      //executionDrillDown = new ExecutionDrillDown();
 
       //Getting value for READER_RUN_MODE keyword
       String[] arrKeyWordValues = Scenario.getKeywordValues("READER_RUN_MODE", testNum);
@@ -922,26 +922,26 @@ public class TestRunData implements java.io.Serializable, Cloneable
        */
       if (enableSynPoint > 0)
       {
-        // object of file bean
-        FileBean fileBeanObj = new FileBean("2", userName);
-        StringBuffer errMsg = new StringBuffer();
-
-        if (debugLogLevel > 0)
-          Log.debugLogAlways(className, "initForNewTestRun", "", "", "Scenario Name = " + "TestRun/" + testNum + "/" + scenarioName.substring(scenarioName.lastIndexOf("/") + 1, scenarioName.length()));
-
-        // getting global properties
-        globalScenarioProp = fileBeanObj.getKeyValues("TestRun/" + testNum + "/" + scenarioName.substring(scenarioName.lastIndexOf("/") + 1, scenarioName.length()), errMsg);
-
-        if (globalScenarioProp != null)
-        {
-          Object[] obj = fileBeanObj.getScenGroupScriptInfo(globalScenarioProp, "SGRP", linkedHashMapForTransPageSync);
-          if (obj != null)
-          {
-            arrGroupScript = (String[][]) obj[0];
-            linkedHashMapForTransPageSync = (LinkedHashMap) obj[1];
-            linkedHashMapForTransPageSync = fileBeanObj.updateTransPageSyncList(linkedHashMapForTransPageSync, "Server");
-          }
-        }
+//        // object of file bean
+//        FileBean fileBeanObj = new FileBean("2", userName);
+//        StringBuffer errMsg = new StringBuffer();
+//
+//        if (debugLogLevel > 0)
+//          Log.debugLogAlways(className, "initForNewTestRun", "", "", "Scenario Name = " + "TestRun/" + testNum + "/" + scenarioName.substring(scenarioName.lastIndexOf("/") + 1, scenarioName.length()));
+//
+//        // getting global properties
+//        globalScenarioProp = fileBeanObj.getKeyValues("TestRun/" + testNum + "/" + scenarioName.substring(scenarioName.lastIndexOf("/") + 1, scenarioName.length()), errMsg);
+//
+//        if (globalScenarioProp != null)
+//        {
+//          Object[] obj = fileBeanObj.getScenGroupScriptInfo(globalScenarioProp, "SGRP", linkedHashMapForTransPageSync);
+//          if (obj != null)
+//          {
+//            arrGroupScript = (String[][]) obj[0];
+//            linkedHashMapForTransPageSync = (LinkedHashMap) obj[1];
+//            linkedHashMapForTransPageSync = fileBeanObj.updateTransPageSyncList(linkedHashMapForTransPageSync, "Server");
+//          }
+//        }
       }
 
       //Getting phase info

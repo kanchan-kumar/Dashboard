@@ -987,13 +987,13 @@ public class PartitionInfoUtils
       }
    
       /*Creating object of event advisory.*/
-      EventGeneratorAdvisory eventGeneratorAdvisoryObj = new EventGeneratorAdvisory(correlationRequestDTOObj.getTestRun(), correlationRequestDTOObj.getNarFileName(), 2, correlationRequestDTOObj.getStartTime(), correlationRequestDTOObj.getEndTime(), -1);
+      //EventGeneratorAdvisory eventGeneratorAdvisoryObj = null;//new EventGeneratorAdvisory(correlationRequestDTOObj.getTestRun(), correlationRequestDTOObj.getNarFileName(), 2, correlationRequestDTOObj.getStartTime(), correlationRequestDTOObj.getEndTime(), -1);
             
       /*Creating Instance of PearsonCorrelation class.*/
-      PearsonCorrelation pearsonCorrelationObj = new PearsonCorrelation(correlationRequestDTOObj, eventGeneratorAdvisoryObj);
+      //PearsonCorrelation pearsonCorrelationObj = null;//new PearsonCorrelation(correlationRequestDTOObj, eventGeneratorAdvisoryObj);
       
       /*Processing and Getting Correlated values.*/
-      pearsonCorrelationObj.generatePearsonCorrelation();
+      //pearsonCorrelationObj.generatePearsonCorrelation();
       
       Log.debugLogAlways(className, "getCorrelatedData", "", "", "Correlation Data generated. Going to read data from file. status = " + correlationRequestDTOObj.isSuccessful());
       
@@ -1001,9 +1001,9 @@ public class PartitionInfoUtils
       {
 	Log.debugLogAlways(className, "getCorrelatedData", "", "", "Getting Analysis Alert Data for test run = " + correlationRequestDTOObj.getTestRun());
 	String fileNameWithPath = Config.getWorkPath() + "/webapps/logs/TR" + correlationRequestDTOObj.getTestRun() + "/" + "correlation_alert_history.dat";
-	AnalysisAlert analysisAlertObj = new AnalysisAlert(correlationRequestDTOObj.getTestRun() + "", fileNameWithPath);
+	//AnalysisAlert analysisAlertObj = new AnalysisAlert(correlationRequestDTOObj.getTestRun() + "", fileNameWithPath);
 	
-	String arrAlertData[][] = analysisAlertObj.getStrArrAlertFileData();
+	String arrAlertData[][] = null;//analysisAlertObj.getStrArrAlertFileData();
 	
 	if(arrAlertData == null || arrAlertData.length == 0)
 	{
